@@ -23,12 +23,12 @@ const isElementInViewport = (element) => {
     elementOffset = $('#about').offset().top,
     distance      = (elementOffset - scrollTop);
   console.log(distance, $(window).height())
-  console.log($(window).height()*(4/5) < distance)
-  return ($(window).height()*(4/5) < distance)
+  console.log($(window).height()*(4/5) > distance)
+  return ($(window).height()*(4/5) > distance)
 }
 
 const checkAnimation = () => {
-  const elem = $('#about')
+  const elem = $('.title')
   if (elem.hasClass('animate')) return;
   if (isElementInViewport(elem)) {
     elem.addClass('animate');
