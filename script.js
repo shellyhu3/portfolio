@@ -1,37 +1,41 @@
-const logo = document.querySelectorAll('.title path');
+(() => {
+  'use strict';
+  // Page is loaded
+  const objects = document.getElementsByClassName('asyncImage');
+  Array.from(objects).map((item) => {
+    // Start loading image
+    const img = new Image();
+    img.src = item.dataset.src;
+    // Once image is loaded replace the src of the HTML element
+    img.onload = () => {
+      item.classList.remove('asyncImage');
+      return item.nodeName === 'IMG' ? 
+        item.src = item.dataset.src :        
+        item.style.backgroundImage = `url(${item.dataset.src})`;
+    };
+  });
+})();
 
-console.log(logo);
 
-logo.forEach((letter,i) => {
-  console.log(`letter ${i} is ${letter.getTotalLength()}`);
-})
-
+//title SVG animation
 const isElementInViewport = (element) => {
-  // var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1) ? 'body' : 'html');
-  // var viewportTop = $(scrollElem).scrollTop();
-  // var viewportBottom = viewportTop + $(window).height();
-
-  // // Get the position of the element on the page.
-  // var elemTop = Math.round( element.offset().top );
-  // console.log('elemTop', elemTop)
-  // var elemBottom = elemTop + element.height();
-  // console.log('elemBottom', elemBottom)
-  // console.log('viewTop', viewportTop, 'viewBottom', viewportBottom)
-
-  // return ((elemTop < viewportBottom) && (elemBottom > viewportTop));
-  var scrollTop     = $(window).scrollTop(),
-    elementOffset = $('#about').offset().top,
-    distance      = (elementOffset - scrollTop);
+  var scrollTop = $(window).scrollTop(),
+    elementOffset = $(element).offset().top,
+    distance = (elementOffset - scrollTop);
   console.log(distance, $(window).height())
   console.log($(window).height()*(4/5) > distance)
   return ($(window).height()*(4/5) > distance)
 }
 
 const checkAnimation = () => {
-  const elem = $('.title')
-  if (elem.hasClass('animate')) return;
-  if (isElementInViewport(elem)) {
-    elem.addClass('animate');
+  const elem1 = $('.title1')
+  const elem2 = $('.title2')
+  if (elem1.hasClass('animate') && elem2.hasClass('animate')) return;
+  if (isElementInViewport(elem1)) {
+    elem1.addClass('animate');
+  }
+  if (isElementInViewport(elem2)) {
+    elem2.addClass('animate');
   }
 }
 

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Questrial");
 * {
   margin: 0;
   padding: 0;
@@ -5,120 +6,94 @@
 
 body {
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  font-family: 'Questrial', sans-serif;
 }
 
-#name {
-  height: 100vh;
-  width: 100%;
-  background: url("../assets/images/LA.jpg") no-repeat;
-  background-size: cover;
-  background-position: center;
+h1, h3 {
+  font-weight: normal;
 }
 
-#name #logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  -webkit-animation: fill 0.5s ease forwards 2.5s;
-          animation: fill 0.5s ease forwards 2.5s;
+h1 {
+  font-size: 3em;
 }
 
-#name #logo path {
-  stroke: white;
-}
-
-#name #logo path:nth-child(1) {
-  stroke-dasharray: 355px;
-  stroke-dashoffset: 355px;
-  -webkit-animation: line-animation 2s ease forwards;
-          animation: line-animation 2s ease forwards;
-}
-
-#name #logo path:nth-child(2) {
-  stroke-dasharray: 364px;
-  stroke-dashoffset: 364px;
-  -webkit-animation: line-animation 2s ease forwards 0.3s;
-          animation: line-animation 2s ease forwards 0.3s;
-}
-
-#name #logo path:nth-child(3) {
-  stroke-dasharray: 351px;
-  stroke-dashoffset: 351px;
-  -webkit-animation: line-animation 2s ease forwards 0.6s;
-          animation: line-animation 2s ease forwards 0.6s;
-}
-
-#name #logo path:nth-child(4) {
-  stroke-dasharray: 220px;
-  stroke-dashoffset: 220px;
-  -webkit-animation: line-animation 2s ease forwards 0.9s;
-          animation: line-animation 2s ease forwards 0.9s;
-}
-
-#name #logo path:nth-child(5) {
-  stroke-dasharray: 220px;
-  stroke-dashoffset: 220px;
-  -webkit-animation: line-animation 2s ease forwards 1.2s;
-          animation: line-animation 2s ease forwards 1.2s;
-}
-
-#name #logo path:nth-child(6) {
-  stroke-dasharray: 256px;
-  stroke-dashoffset: 256px;
-  -webkit-animation: line-animation 2s ease forwards 1.5s;
-          animation: line-animation 2s ease forwards 1.5s;
-}
-
-#name #logo path:nth-child(7) {
-  stroke-dasharray: 364px;
-  stroke-dashoffset: 364px;
-  -webkit-animation: line-animation 2s ease forwards 1.8s;
-          animation: line-animation 2s ease forwards 1.8s;
-}
-
-#name #logo path:nth-child(8) {
-  stroke-dasharray: 330px;
-  stroke-dashoffset: 330px;
-  -webkit-animation: line-animation 2s ease forwards 2.1s;
-          animation: line-animation 2s ease forwards 2.1s;
-}
-
-@-webkit-keyframes line-animation {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes line-animation {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@-webkit-keyframes fill {
-  from {
-    fill: transparent;
-  }
-  to {
-    fill: white;
-  }
-}
-
-@keyframes fill {
-  from {
-    fill: transparent;
-  }
-  to {
-    fill: white;
-  }
+h3 {
+  font-size: 2em;
 }
 
 a {
   color: white;
   text-decoration: none;
+}
+
+.right_align {
+  text-align: right;
+}
+
+#name {
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+  background: url("../assets/images/LA_min.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #415158;
+}
+
+#name .intro {
+  margin: 80px 40px 0 0;
+  padding-right: 10px;
+  border-right: 5px solid #415158;
+  overflow-x: hidden;
+}
+
+.slide_left {
+  position: relative;
+  -webkit-animation: fadeIn 500ms ease;
+          animation: fadeIn 500ms ease;
+  -webkit-animation: slideLeft 800ms ease;
+          animation: slideLeft 800ms ease;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideLeft {
+  from {
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 
 #about, #projects {
@@ -135,8 +110,8 @@ a {
   background: pink;
 }
 
-.title {
-  width: 150px;
+.title1, .title2 {
+  width: 175px;
 }
 
 .animate {
@@ -197,6 +172,36 @@ a {
           animation: line-animation 0.5s ease forwards 0.6s;
 }
 
+@-webkit-keyframes line-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes line-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes fill {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: white;
+  }
+}
+
+@keyframes fill {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: white;
+  }
+}
+
 footer {
   position: fixed;
   bottom: 0;
@@ -210,11 +215,12 @@ footer {
   border: 1px solid white;
   border-radius: 50%;
   padding: 15px;
+  margin: 5px;
   cursor: pointer;
 }
 
 .social_icons:hover {
-  color: black;
+  color: #bfcfd8;
   background: white;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
