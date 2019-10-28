@@ -88,60 +88,77 @@ a{
 
 #about{
   background: $tertiaryColor;
-  #skills{
-    // background: black;
-    position: relative;
-    width: 40%;
-    margin: 0 auto;
-    li{
-      list-style-type: none;
+  .grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    #skills{
       position: relative;
-      float: left;
-      width: 28%;
-      padding: 0 0 32% 0;
-      transform: rotate(-60deg) skewY(30deg);
-      background: black;
-      overflow: hidden;
-      visibility: hidden;
-      // margin: 0 1%;
-      *{
-        visibility: visible;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .hexagon{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: $primaryColor;
-        transform: skewY(-30deg) rotate(60deg);
+      width: 60%;
+      margin: 0 auto;
+      li{
+        font-size: 1.5vw;
+        list-style-type: none;
+        position: relative;
+        float: left;
+        width: 28%;
+        padding: 0 0 32% 0;
+        transform: rotate(-60deg) skewY(30deg);
         overflow: hidden;
-        &:hover{
-          transform: scale(1.5);
+        visibility: hidden;
+        // margin: 0 1%;
+        *{
+          visibility: visible;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .hexagon{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: $primaryColor;
+          transform: skewY(-30deg) rotate(60deg);
+          overflow: hidden;
+        }
+      }
+      li:nth-child(3n+2){
+        margin: 0 1%;
+      }
+      li:nth-child(6n+4), li:nth-child(6n+5), li:nth-child(6n+6){
+        margin-top: -7%;
+        margin-bottom: -7%;
+        transform: translateX(50%) rotate(-60deg) skewY(30deg);
+      }
+      li:nth-child(6n+4){
+        margin-left: 0.5%;
+      }
+    }
+    .clear:after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+    // @media only screen and (max-width: 800px) {
+    //   #skills{
+    //     width: 70%;
+    //   }
+    // }
+  }
+  @media only screen and (max-width: 800px) {
+    .grid{
+      grid-template-columns: 1fr;
+      #skills{
+        width: 40%;
+        li{
+          font-size: 2.2vw;
         }
       }
     }
-    li:nth-child(3n+2){
-      margin: 0 1%;
-    }
-    li:nth-child(6n+4), li:nth-child(6n+5), li:nth-child(6n+6){
-      margin-top: -7%;
-      margin-bottom: -7%;
-      transform: translateX(50%) rotate(-60deg) skewY(30deg);
-    }
-    li:nth-child(6n+4){
-      margin-left: 0.5%;
-    }
-  }
-  .clear:after{
-    content: '';
-    display: block;
-    clear: both;
   }
 }
+
 
 #projects{
   background: $primaryColor;
@@ -228,3 +245,4 @@ footer{
     transition: 0.3s ease-in-out;
   }
 }
+

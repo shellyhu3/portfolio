@@ -107,13 +107,21 @@ a {
   background: #415158;
 }
 
-#about #skills {
+#about .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+#about .grid #skills {
   position: relative;
-  width: 40%;
+  width: 60%;
   margin: 0 auto;
 }
 
-#about #skills li {
+#about .grid #skills li {
+  font-size: 1.5vw;
   list-style-type: none;
   position: relative;
   float: left;
@@ -121,12 +129,11 @@ a {
   padding: 0 0 32% 0;
   -webkit-transform: rotate(-60deg) skewY(30deg);
           transform: rotate(-60deg) skewY(30deg);
-  background: black;
   overflow: hidden;
   visibility: hidden;
 }
 
-#about #skills li * {
+#about .grid #skills li * {
   visibility: visible;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -139,7 +146,7 @@ a {
           align-items: center;
 }
 
-#about #skills li .hexagon {
+#about .grid #skills li .hexagon {
   position: absolute;
   top: 0;
   left: 0;
@@ -151,30 +158,38 @@ a {
   overflow: hidden;
 }
 
-#about #skills li .hexagon:hover {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-}
-
-#about #skills li:nth-child(3n+2) {
+#about .grid #skills li:nth-child(3n+2) {
   margin: 0 1%;
 }
 
-#about #skills li:nth-child(6n+4), #about #skills li:nth-child(6n+5), #about #skills li:nth-child(6n+6) {
+#about .grid #skills li:nth-child(6n+4), #about .grid #skills li:nth-child(6n+5), #about .grid #skills li:nth-child(6n+6) {
   margin-top: -7%;
   margin-bottom: -7%;
   -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
           transform: translateX(50%) rotate(-60deg) skewY(30deg);
 }
 
-#about #skills li:nth-child(6n+4) {
+#about .grid #skills li:nth-child(6n+4) {
   margin-left: 0.5%;
 }
 
-#about .clear:after {
+#about .grid .clear:after {
   content: '';
   display: block;
   clear: both;
+}
+
+@media only screen and (max-width: 800px) {
+  #about .grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  #about .grid #skills {
+    width: 40%;
+  }
+  #about .grid #skills li {
+    font-size: 2.2vw;
+  }
 }
 
 #projects {

@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   // Page is loaded
-  const objects = document.getElementsByClassName('asyncImage');
+  const objects = $('.asyncImage');
   Array.from(objects).map((item) => {
     // Start loading image
     const img = new Image();
@@ -42,3 +42,4 @@ const checkAnimation = () => {
 $(document).on('scroll', () => {
   checkAnimation();
 })
+
