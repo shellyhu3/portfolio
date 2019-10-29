@@ -5,14 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Shelly Hu</title>
+  <!-- <script src="https://kit.fontawesome.com/15d990faa1.js" crossorigin="anonymous"></script> -->
+  <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
   <link rel="stylesheet" href="./styles/style.css">
-  <script src="https://kit.fontawesome.com/15d990faa1.js" crossorigin="anonymous"></script>
+  
 </head>
 <body>
-    <!-- <header>
-      <a href="#">about</a>
-      <a href="#">projects</a>
-    </header> -->
+    <nav>
+      <div id="nav_icon" onclick="expand()">
+        <i class="fas fa-bars fa-2x bars"></i>
+        
+      </div>
+      <div id="menu">
+        <p class="item"><a href="#about" class="about_txt">about</a></p>
+        <p class="item"><a href="#projects" class="project_txt">projects</p></a>
+      </div>
+    </nav>
 
     <div id="name" class="asyncImage" data-src="./assets/images/LA.jpg">
       <div class="right_align intro">
@@ -37,16 +45,16 @@
       <div class="grid">
         <p>While I am a full-stack developer with a diverse skillset, my expertise is in React/Node and Django. I take pride in writing and maintaining clean, readable code to build and optimize full-stack web applications.</p>
         <div>
-          <h2>SKILLS</h2>
           <ul id="skills" class="clear">
             <li><i class="fab fa-js-square fa-2x hexagon"></i></li>
+            <li><i class="fab fa-python fa-2x hexagon"></i></li>
+            <li><i class="fab fa-java fa-2x hexagon"></i></li>
             <li><i class="fab fa-react fa-2x hexagon"></i></li>
             <li><i class="fab fa-node fa-2x hexagon"></i></li>
             <li><i class="fab fa-angular fa-2x hexagon"></i></li>
+            <li><i class="fas fa-database fa-2x hexagon"></i></li>
             <li><i class="fab fa-html5 fa-2x hexagon"></i></li>
             <li><i class="fab fa-css3 fa-2x hexagon"></i></li>
-            <li><i class="fab fa-python fa-2x hexagon"></i></li>
-            <li><i class="fab fa-java fa-2x hexagon"></i></li>
             <li><i class="fab fa-aws fa-2x hexagon"></i></li>
             <li><i class="fab fa-git fa-2x hexagon"></i></li>
             <li><i class="fab fa-github fa-2x hexagon"></i></li>
